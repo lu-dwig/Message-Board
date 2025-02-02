@@ -36,6 +36,16 @@ module.exports = function (app) {
               res.json(newThread);
             }
           });
+        } else{
+          Boarddata.threads.push(newThread);
+          Boarddata.save((err, data) => {
+            if (err ||!data){
+              console.log(err);
+              res.send("There was an error saving the post ");
+            } else{
+              res.json(newThread);
+            }
+          });
         }
       });
     res.json({ test: "test"});
