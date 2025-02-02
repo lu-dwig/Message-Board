@@ -1,5 +1,4 @@
 'use strict';
-
 const BoardModel = require("../models").Board;
 const ThreadModel = require("../models").Thread;
 const ReplyModel = require("../models").Reply;
@@ -20,7 +19,9 @@ module.exports = function (app) {
         replies: [],
       });
       console.log("newThread", newThread);
-      BoardModel.findOne({ name: board}, (err, Boarddata) =>{
+      BoardModel.findOne({ 
+        name: board
+      }, (err, Boarddata) =>{
         if (!Boarddata){
           const newBoard = new BoardModel({
             name: board,
