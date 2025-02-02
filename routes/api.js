@@ -19,6 +19,15 @@ module.exports = function (app) {
         delete_password: delete_password,
         replies: [],
       });
+      console.log("newThread", newThread);
+      BoardModel.findOne({ name: board}, (err, Boarddata) =>{
+        if (!Boarddata){
+          const newBoard = new BoardModel({
+            name: board,
+            threads: [],
+          });
+        }
+      });
     res.json({ test: "test"});
   });
     
