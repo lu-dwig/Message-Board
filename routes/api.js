@@ -13,6 +13,12 @@ module.exports = function (app) {
       if (!board){
         board = req.params.board;
       }
+      console.log("post", req.body);
+      const newThread = new ThreadModel({
+        text: text,
+        delete_password: delete_password,
+        replies: [],
+      });
     res.json({ test: "test"});
   });
     
