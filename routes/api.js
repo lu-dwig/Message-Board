@@ -26,6 +26,16 @@ module.exports = function (app) {
             name: board,
             threads: [],
           });
+          console.log("newBoard", newBoard);
+          newBoard.threads.push(newThread);
+          newBoard.save((err, data) => {
+            if (err || !data){
+              console.log(err);
+              res.send("There was an error saving the post ");
+            } else{
+              res.json(newThread);
+            }
+          });
         }
       });
     res.json({ test: "test"});
