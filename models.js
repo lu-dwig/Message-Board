@@ -21,3 +21,8 @@ const ThreadSchema = new Schema({
     replies: { type: [ReplySchema]},
 });
 const Thread = mongoose.model("Thread", ThreadSchema);
+
+const BoardSchema = new Schema({
+    name: { type: String},
+    threads: { type: [ThreadSchema]},
+});
