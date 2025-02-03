@@ -19,9 +19,9 @@ module.exports = function (app) {
         replies: [],
       });
       console.log("newThread", newThread);
-      BoardModel.findOne({ 
-        name: board
-      }, (err, Boarddata) =>{
+      BoardModel.findOne(
+        { name: board}
+        , (err, Boarddata) =>{
         if (!Boarddata){
           const newBoard = new BoardModel({
             name: board,
@@ -49,7 +49,6 @@ module.exports = function (app) {
           });
         }
       });
-    res.json({ test: "test"});
   });
     
   app.route('/api/replies/:board');
