@@ -70,7 +70,15 @@ module.exports = function (app) {
               delete_password,
               replies,
             } = thread;
-            
+            return {
+              _id,
+              text,
+              created_on,
+              bumped_on,
+              reported,
+              delete_password,
+              replies,
+            }
           })
         }
       })
