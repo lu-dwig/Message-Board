@@ -58,7 +58,19 @@ module.exports = function (app) {
         if (!data){
           console.log("No board with this name found");
           res.json({ error: "No board with this name found"});
-        }
+        } else{
+          console.log ("data", data);
+          const threads = data.threads.map((thread) => {
+            const {
+              _id,
+              text,
+              created_on,
+              bumped_on,
+              reported,
+              delete_password,
+              replies,
+            } = thread;
+            
           })
         }
       })
