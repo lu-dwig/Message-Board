@@ -55,7 +55,11 @@ module.exports = function (app) {
     BoardModel.findOne(
       { name: board},
       (err, data) =>{
-        })
+        if (!data){
+          console.log("No board with this name found");
+          res.json({ error: "No board with this name found"});
+        }
+          })
         }
       })
   });  
