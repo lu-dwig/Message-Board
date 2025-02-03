@@ -49,8 +49,16 @@ module.exports = function (app) {
           });
         }
       });
-  });
-    
+  })
+  .get((req, res) =>{
+    const board = req.params.board;
+    BoardModel.findOne(
+      { name: board},
+      (err, data) =>{
+        })
+        }
+      })
+  });  
   app.route('/api/replies/:board');
 
 };
