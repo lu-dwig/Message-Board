@@ -78,8 +78,10 @@ module.exports = function (app) {
               reported,
               delete_password,
               replies,
-            }
-          })
+              replycount: thread.replies.length,
+            };
+          });
+          res.json(threads);
         }
       })
   });  
